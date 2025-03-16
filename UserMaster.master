@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserMaster.master.cs" Inherits="UserMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LifeCare Hospital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px;
+            background-color: #f8f9fa;
+            color: black;
+        }
+        .footer {
+            background-color: #0d47a1;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .navbar {
+            background-color: #0d47a1 !important;
+        }
+        .navbar .navbar-brand, .navbar .nav-link {
+            color: black !important;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    
+    <form runat="server">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">LifeCare Hospital</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="Home.aspx">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="AboutUs.aspx">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Gallery.aspx">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Departments.aspx">Departments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contact.aspx">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container mt-4">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        
+        <footer class="footer">
+            <p>&copy; 2025 LifeCare Hospital System. All Rights Reserved.</p>
+        </footer>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
