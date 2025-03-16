@@ -1,0 +1,57 @@
+-- Create Database
+CREATE DATABASE LifeCare;
+GO
+USE LifeCare;
+GO
+
+-- Table: Admin
+CREATE TABLE Admin (
+    ID INT IDENTITY(1,1) PRIMARY  KEY ,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Password VARCHAR(255) NOT NULL
+);
+
+-- Table: Department
+CREATE TABLE Department (
+    DeptID INT IDENTITY(1,1) PRIMARY KEY,
+    DeptName NVARCHAR(100) NOT NULL
+);
+GO
+
+-- Table: Doctor
+CREATE TABLE Doctor (
+    DocID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Specialization NVARCHAR(100) NOT NULL,
+    Department NVARCHAR(100) NOT NULL,
+    Profile NVARCHAR(255)
+);
+GO
+
+-- Table: Appointment
+CREATE TABLE Appointment (
+    AppID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    Pno NVARCHAR(20) NOT NULL,
+    AppDate DATE NOT NULL,
+    DocName NVARCHAR(100) NOT NULL,
+    Additional NVARCHAR(MAX)
+);
+
+GO
+
+-- Table: Messages
+CREATE TABLE Message (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    UserName NVARCHAR(100) NOT NULL,
+    UserEmail NVARCHAR(100) NOT NULL,
+    UserMessage NVARCHAR(MAX) NOT NULL,
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+GO
+
+
+
+
+
